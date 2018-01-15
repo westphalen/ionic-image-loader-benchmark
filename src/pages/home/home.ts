@@ -40,14 +40,12 @@ export class HomePage {
     this.imageLoader.clearCache();
 
     return new Promise<any>(() => {
-      const interval = 64;
       const photos = 50;
       const beginAll = performance.now();
       let promises: Promise<any>[] = [];
-      for (let i = 1; i < photos; i++) {
-        const size = i * interval;
+      for (let i = 0; i < photos; i++) {
         const begin = performance.now();
-        const src = 'http://via.placeholder.com/' + size + 'x' + size + '?' + begin;
+        const src = 'https://picsum.photos/512/512?' + begin;
         const index = this.photos.push({
           benchmark: null,
           original: src,

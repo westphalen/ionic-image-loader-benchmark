@@ -29,7 +29,7 @@
         </ion-item>
     </ion-list>
     <ion-card *ngFor="let photo of photos">
-        <img-loader [src]="photo.original" useImg></img-loader>
+        <img-loader [src]="photo.original" useImg *ngIf="photo.benchmark"></img-loader>
         <ion-card-content>
             <ion-grid>
                 <ion-row>
